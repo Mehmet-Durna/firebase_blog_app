@@ -1,5 +1,6 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AppRouter from "./router/AppRouter";
 import AuthContextProvider from "./context/AuthContext";
 import PostContextProvider from "./context/PostContext";

@@ -36,6 +36,12 @@
   cursor: pointer;
 }
 
+.card-img-top {
+  width: 100%;
+  height: 40vh;
+  object-fit: fill;
+}
+
 .my-card{
   cursor: pointer;
 }

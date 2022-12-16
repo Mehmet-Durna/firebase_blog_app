@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-
+import blokImage from "../assets/luffy.png"
 
 
 
@@ -15,12 +15,12 @@ function Post({post}) {
     }
 
     return (
-        <div className="col col-6 mb-2">
-        <div className="card my-card" onClick={()=> {
+        <div className="col-6 mb-2">
+        <div className="card" onClick={()=> {
             cardHandler(post)
         }}>
                 <div className="card-body">
-                    <img className="card-img-top" src={post.postImage} alt="Card image cap"/>
+                    <img className="card-img-top" src={post.postImage ? post.postImage:blokImage} alt="Card image cap"/>
                     <h5 className="card-title">{post.title}</h5>
                     <p className="card-text">
                         {post.postText}

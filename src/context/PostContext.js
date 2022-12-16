@@ -1,7 +1,7 @@
 import {createContext, useState} from "react";
 import {collection, deleteDoc, doc, getDocs} from "firebase/firestore";
 import {db} from "../auth/firebase";
-import blokImage from "../assets/luffy.png"
+
 
 
 
