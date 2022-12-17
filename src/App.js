@@ -1,6 +1,7 @@
 import './App.css';
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import AppRouter from "./router/AppRouter";
 import AuthContextProvider from "./context/AuthContext";
 import PostContextProvider from "./context/PostContext";

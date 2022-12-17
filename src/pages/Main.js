@@ -11,8 +11,11 @@ function Main() {
 
 
     return (
-        <div className="container">
-            <div className="row">
+        <div className="container   bg-success">
+
+
+            <div className="row ">
+                <h1 className="text-center">DashBoard</h1>
 
             {postLists?.map((post) => {
                 return (

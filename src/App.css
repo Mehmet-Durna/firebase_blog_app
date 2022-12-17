@@ -36,12 +36,20 @@
   cursor: pointer;
 }
 
-.card-img-top {
-  width: 100%;
-  height: 40vh;
-  object-fit: fill;
-}
-
 .my-card{
   cursor: pointer;
+  height: 30vh;
+}
+
+.card-img-top {
+   width: 100%;
+   height: 30vh;
+   object-fit: fill;
+ }
+
+.card__preview-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
