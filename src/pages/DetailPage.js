@@ -20,33 +20,46 @@ function DetailPage() {
 
 
     return (
-        <div>
-            <img className="card-img-top" src={post.postImage} alt="Card image cap"/>
-            <h1>{post?.title}</h1>
-            <h1>{post?.postText}</h1>
-            <h1>{post?.author.name}</h1>
-            {   currentUser.uid === post.author.id &&
-                <FaPen className="edit-pen" onClick={() => {
-                navigate(`/edit-post/${post.id}`)
-            }}/>
-            }
+        <div className="container mt-5">
+            <div className="row row-cols-1 row-cols-lg-2  ">
 
-            {currentUser.uid === post.author.id &&
-                <div className="deletePost">
-                    <button
-                        onClick={() => {
-                            deletePost(post.id);
-                        }}
-                    >
-                        {" "}
-                        &#128465;
-                    </button>
-
+                <div className="col  ">
+                    <h1 className="text-center">{post?.title}</h1>
+                    <p>{post?.postText}</p>
+                    <h5>{post?.author.name}</h5>
 
                 </div>
 
-            }
 
+                <div className="col  align-self-center">
+                    <img className="detail-image " src={post?.postImage} alt="Card image cap"/>
+                </div>
+
+
+
+            </div>
+
+               <div className="text-center  my-3">
+                   {currentUser.uid === post.author.id &&
+                       <div className="deletePost">
+                           <button className="mx-3"
+                               onClick={() => {
+                                   deletePost(post.id);
+                               }}
+                           >
+                               {" "}
+                               &#128465;
+                           </button>
+
+                           <FaPen className="edit-pen" onClick={() => {
+                               navigate(`/edit-post/${post.id}`)
+                           }}/>
+
+
+                       </div>
+
+                   }
+               </div>
 
         </div>
     );

@@ -48,8 +48,21 @@
  }
 
 .card__preview-text{
+
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.dropdown-icon{
+  width: 40px;
+  height: 30px;
+}
+
+
+.detail-image{
+  width: 40em;
+  height: 20em;
+
 }

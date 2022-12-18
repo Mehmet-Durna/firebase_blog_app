@@ -15,7 +15,7 @@ function Main() {
 
 
             <div className="row ">
-                <h1 className="text-center">DashBoard</h1>
+                <h1 className="text-center">Dashboard</h1>
 
             {postLists?.map((post) => {
                 return (
