@@ -42,22 +42,19 @@ function DetailPage() {
                <div className="text-center  my-3">
                    {currentUser.uid === post.author.id &&
                        <div className="deletePost">
-                           <button className="mx-3"
+                           <button className="mx-3 btn btn-outline-danger"
                                onClick={() => {
                                    deletePost(post.id);
                                }}
                            >
-                               {" "}
                                &#128465;
                            </button>
-
-                           <FaPen className="edit-pen" onClick={() => {
+                           <button className="btn btn-outline-primary" onClick={() => {
                                navigate(`/edit-post/${post.id}`)
-                           }}/>
-
-
+                           }}>
+                               &#9998;
+                           </button>
                        </div>
-
                    }
                </div>
 

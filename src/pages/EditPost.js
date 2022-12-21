@@ -33,38 +33,51 @@ function EditPost() {
     return (
 
         <div className="editPostPage">
-            <h5>Edit Sayfasi</h5>
+            <h5 className="text-center">Edit Your Post</h5>
             <div className="container">
-                <h1>{post?.title}</h1>
+                <h1 className="text-center text-danger">{post?.title}</h1>
+<form>
 
-                <div className="inputGp" >
-                    <label> Image Url</label>
+                <div className="mb-3" >
+                    <label  className="form-label"> Image Url</label>
                     <input
+                        className="form-control"
+                        type="url"
                         value={updatedPost.postImage}
                         onChange={(e)=> setUpdatedPost({...updatedPost, postImage:e.target.value})}
                         name="postImage"
                     />
+                    <div id="imageUrlHelp" className="form-text">You need the add your image url.</div>
                 </div>
-                <div className="inputGp" >
-                    <label> Title:</label>
+
+                <div className="mb-3" >
+
+                    <label className="form-label"> Title</label>
                     <input
+                        className="form-control"
+                        type="text"
                         value={updatedPost.title}
                         onChange={(e)=> setUpdatedPost({...updatedPost, title:e.target.value})}
                         name="title"
                     />
                 </div>
 
-                <div className="inputGp">
-                    <label> Post:</label>
+                <div className="mb-3">
+                    <label className="form-label"> Post:</label>
                     <textarea
+                        className="form-control"
                         value={updatedPost.postText}
                         onChange={(e)=> setUpdatedPost({...updatedPost, postText:e.target.value})}
                     />
                 </div>
-
-                <button onClick={()=>editCurrentPost(post.id,updatedPost.postImage,updatedPost.title,updatedPost.postText)}> Submit Post</button>
+<div className="text-center">
+                <button className="btn btn-outline-primary" onClick={()=>editCurrentPost(post.id,updatedPost.postImage,updatedPost.title,updatedPost.postText)}> Submit Post</button>
+</div>
+</form>
             </div>
+
         </div>
+
     );
 }
 
