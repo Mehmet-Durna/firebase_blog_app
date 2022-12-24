@@ -9,7 +9,7 @@ import { CgProfile } from "react-icons/cg";
 function Navbar() {
     const navigate = useNavigate();
     const {currentUser} = useContext(AuthContext);
-
+const photo="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png";
     return (
         <div>
             <nav className="navbar navbar-expand-lg ">
@@ -22,13 +22,12 @@ function Navbar() {
                         {currentUser ? (
                                 <>
 
+                                    <div className="dropdown text-center">
 
+                                        <img src={currentUser.photoURL? currentUser.photoURL:photo} alt="Profile Image" className="rounded-circle dropdown-toggle btn navbar-image " id="dropdownMenuButton"
+                                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                             referrerPolicy="no-referrer"/>
 
-                                    <div className="dropdown">
-                                        <CgProfile className=" dropdown-toggle dropdown-icon" type="button" id="dropdownMenuButton"
-                                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Dropdown button
-                                        </CgProfile>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a className="dropdown-item " href="#" onClick={()=> navigate("/profile")}>Profile</a>
                                             <a className="dropdown-item"  href="#" onClick={()=> navigate("/create-post")}>Create Post</a>

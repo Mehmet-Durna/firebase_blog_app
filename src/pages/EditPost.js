@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useNavigate, useLocation} from "react-router-dom";
-import {addDoc, doc, updateDoc} from "firebase/firestore";
-import {auth, db} from "../auth/firebase";
+import {doc, updateDoc} from "firebase/firestore";
+import {db} from "../auth/firebase";
 import PostForm from "../components/PostForm";
 
 

@@ -1,69 +1,70 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
-.post-group{
+.post-group {
 
 
 }
-.post{
-  background-color: purple;
+
+.post {
+    background-color: purple;
 }
 
-.edit-pen{
-  cursor: pointer;
-  border: solid 1px black;
+.edit-pen {
+    cursor: pointer;
+    border: solid 1px black;
 }
 
-.my-card{
-  height: 30vh;
+.my-card {
+    height: 30vh;
 }
 
 .card-img-top {
-   width: 100%;
-   height: 30vh;
-   object-fit: fill;
- }
-
-.card__preview-text{
-
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+    width: 100%;
+    height: 30vh;
+    object-fit: fill;
 }
 
-.dropdown-icon{
-  width: 40px;
-  height: 30px;
+.card__preview-text {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 
-.detail-image{
-  width: 40em;
-  height: 20em;
+
+.detail-image {
+    width: 40em;
+    height: 20em;
 
 }
 
+.navbar-image{
+    width: 60px;
+    height: 60px;
+}
