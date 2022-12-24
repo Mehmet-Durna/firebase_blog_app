@@ -11,11 +11,9 @@ function Main() {
 
 
     return (
-        <div className="container   bg-success">
-
-
-            <div className="row ">
-                <h1 className="text-center">Dashboard</h1>
+        <div className="container   ">
+            <h1 className="text-center text-danger">Share Your Ideas</h1>
+            <div className="row row-cols-1 row-cols-md-2 ">
 
             {postLists?.map((post) => {
                 return (

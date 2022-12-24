@@ -9,7 +9,7 @@ export const AuthContext = createContext();
 function AuthContextProvider({children}) {
 
 
-    const [currentUser,setCurrentUser]=useState(true)
+    const [currentUser,setCurrentUser]=useState("false")
 
     useEffect(()=>{
         userObserver(setCurrentUser)

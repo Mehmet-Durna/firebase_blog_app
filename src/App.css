@@ -38,7 +38,6 @@
 }
 
 .my-card{
-  cursor: pointer;
   height: 30vh;
 }
 
@@ -67,3 +66,4 @@
   height: 20em;
 
 }
+

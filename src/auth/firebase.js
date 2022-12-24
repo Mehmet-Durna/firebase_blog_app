@@ -53,7 +53,6 @@ signOut(auth).then((res) => {
     console.log(res)
 })
     .catch((error) => {
-    // An error happened.
 });
 }
 

@@ -5,9 +5,9 @@ import {AuthContext} from "../context/AuthContext";
 import { CgProfile } from "react-icons/cg";
 
 
+
 function Navbar() {
     const navigate = useNavigate();
-
     const {currentUser} = useContext(AuthContext);
 
     return (
@@ -30,8 +30,10 @@ function Navbar() {
                                             Dropdown button
                                         </CgProfile>
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a onClick={()=> navigate("/create-post")} href="#" className="dropdown-item">Create Post</a>
+                                            <a className="dropdown-item " href="#" onClick={()=> navigate("/profile")}>Profile</a>
+                                            <a className="dropdown-item"  href="#" onClick={()=> navigate("/create-post")}>Create Post</a>
                                             <a className="dropdown-item " href="#" onClick={()=> logOut()}>Logout</a>
+
                                         </div>
                                     </div>
 
@@ -44,7 +46,6 @@ function Navbar() {
                                 <>
                                     <button onClick={()=> navigate("/login")} className="ms-2 btn btn-outline-light">Login</button>
                                     <button onClick={()=> navigate("/register")} className="ms-2 btn btn-outline-light">Register</button>
-
                                 </>
                             )}
 

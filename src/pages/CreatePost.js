@@ -1,66 +1,39 @@
-
-import { addDoc, collection } from "firebase/firestore";
-import { db, auth } from "../auth/firebase";
-import { useNavigate } from "react-router-dom";
+import {addDoc} from "firebase/firestore";
+import {auth} from "../auth/firebase";
+import {useNavigate} from "react-router-dom";
 import {useContext} from "react";
 import {PostContext} from "../context/PostContext";
-
-
+import PostForm from "../components/PostForm";
 
 
 function CreatePost() {
 
 
-    const {postsCollectionRef,title,setTitle,postText,setPostText,postImage,setPostImage}=useContext(PostContext);
+    const {postsCollectionRef, post, setPost} = useContext(PostContext);
 
     let navigate = useNavigate();
 
-    const createPost = async () => {
+    const {postImage, title, postText} = post;
+
+    const handleSubmit = async () => {
+
+        navigate("/");
         await addDoc(postsCollectionRef, {
             postImage,
             title,
             postText,
-            author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+            author: {name: auth.currentUser.displayName, id: auth.currentUser.uid},
         });
-        navigate("/");
-    };
+    }
+
+    const handleChange = (e) => {
+        setPost({...post, [e.target.name]: e.target.value})
+    }
 
 
     return (
-        <div className="createPostPage">
-            <div className="cpContainer s">
-                <h1>Create A Post</h1>
+       <PostForm handleChange={handleChange} handleSubmit={handleSubmit}/>
 
-                <div className="inputGp" >
-                    <label> Image:</label>
-                    <input
-                        placeholder="Image Url..."
-                        onChange={(event) => {
-                            setPostImage(event.target.value);
-                        }}
-                    />
-                </div>
-                <div className="inputGp" >
-                    <label> Title:</label>
-                    <input
-                        placeholder="Title..."
-                        onChange={(event) => {
-                            setTitle(event.target.value);
-                        }}
-                    />
-                </div>
-                <div className="inputGp">
-                    <label> Post:</label>
-                    <textarea
-                        placeholder="Post..."
-                        onChange={(event) => {
-                            setPostText(event.target.value);
-                        }}
-                    />
-                </div>
-                <button onClick={createPost}> Submit Post</button>
-            </div>
-        </div>
     );
 }
 
