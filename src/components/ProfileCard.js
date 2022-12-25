@@ -17,8 +17,6 @@ function ProfileCard() {
                     <div className="mt-3">
                         <h4>{currentUser.displayName}</h4>
                         <p className="text-secondary mb-1">{currentUser.email}</p>
-                        <button className="btn btn-primary">Follow</button>
-                        <button className="btn btn-outline-primary">Message</button>
                     </div>
                 </div>
             </div>
