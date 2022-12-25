@@ -48,6 +48,18 @@ export const signIn = async (email, password, navigate) => {
     }
 }
 
+export const signUpProvider = async (navigate)=>{
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider)
+        .then((result) => {
+            console.log(result)
+            navigate("/")
+
+        }).catch((error) => {
+        console.log(error)
+    });
+}
+
 export const logOut =()=>{
 signOut(auth).then((res) => {
     console.log(res)
@@ -66,14 +78,3 @@ export const userObserver = (setCurrentUser) =>{
     });
 }
 
-export const signUpProvider = (navigate)=>{
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-        .then((result) => {
-            console.log(result)
-            navigate("/")
-
-        }).catch((error) => {
-        console.log(error)
-    });
-}
