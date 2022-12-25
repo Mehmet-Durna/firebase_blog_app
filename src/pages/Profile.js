@@ -10,6 +10,7 @@ function Profile() {
     const {currentUser} = useContext(AuthContext);
 
     return (
+
         <div className="container">
           <div className="row gutters-sm" >
             <div className="mb-3">
@@ -24,6 +25,7 @@ function Profile() {
 
         </div>
     </div>
+
     );
 }
 
