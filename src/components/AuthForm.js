@@ -6,7 +6,6 @@ import {useNavigate} from "react-router-dom";
 function AuthForm({handleChange, handleSubmit,info}) {
 
     const navigate=useNavigate();
-    console.log(info.firstName)
 
 
     return (

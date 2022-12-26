@@ -9,6 +9,7 @@ import {useContext} from "react";
 import EditPost from "../pages/EditPost";
 import DetailPage from "../pages/DetailPage";
 import Profile from "../pages/Profile";
+import AuthorProfile from "../pages/AuthorProfile";
 
 function AppRouter() {
     const {currentUser} = useContext(AuthContext);
@@ -54,6 +55,7 @@ function AppRouter() {
                     <Route path="/detail-page/:id" element={<DetailPage/>}/>
                     <Route path= "/edit-post/:id" element={<EditPost/>}/>
                     <Route path="/profile" element={<Profile/>}/>
+                    <Route path="/author-profile/:authorName" element={<AuthorProfile/>}/>
 
                 </Route>
             </Routes>

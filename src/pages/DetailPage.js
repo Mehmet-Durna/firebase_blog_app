@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {PostContext} from "../context/PostContext";
 import {AuthContext} from "../context/AuthContext";
@@ -13,7 +13,6 @@ function DetailPage() {
     const {deletePost} = useContext(PostContext);
     const {currentUser} = useContext(AuthContext);
 
-    console.log(post)
 
 
 function deleteHandler(id){
@@ -39,7 +38,7 @@ function deleteHandler(id){
                 <div className="col  ">
                     <h1 className="text-center">{post?.title}</h1>
                     <p>{post?.postText}</p>
-                    <h5>{post?.author.name}</h5>
+                    <h5>{post?.author.displayName}</h5>
 
                 </div>
                 <div className="col  align-self-center">
@@ -47,7 +46,7 @@ function deleteHandler(id){
                 </div>
             </div>
             <div className="text-center  my-3">
-                {currentUser?.uid === post?.author.id &&
+                {currentUser?.uid === post?.author.uid &&
                     <div className="deletePost">
                         <button className="mx-3 btn btn-outline-danger"
                                 onClick={() => {

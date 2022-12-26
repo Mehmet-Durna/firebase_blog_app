@@ -32,7 +32,7 @@ function PostCard({post}) {
             </div>
 
             <div className="card-footer">
-                <small className="text-muted">{post.author.name}</small>
+                <button className="btn btn-outline-success" onClick={()=> navigate(`author-profile/${post.author.displayName}`,{state:{user:post.author}})}>{post.author.displayName}</button>
             </div>
         </div>
     );

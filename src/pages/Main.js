@@ -8,10 +8,11 @@ function Main() {
     const {postLists} = useContext(PostContext);
     const [search, setSearch] = useState("");
     const [filterType, setFilterType] = useState("Title");
+
     const posts = postLists.filter(p => filterType === "Title" ?
         p.title.toLowerCase().includes(search.toLowerCase())
         :
-        p.author.name.toLowerCase().includes(search.toLowerCase())
+        p.author.displayName.toLowerCase().includes(search.toLowerCase())
     );
 
     const [displaySearch, setDisplaySearch] = useState(false);

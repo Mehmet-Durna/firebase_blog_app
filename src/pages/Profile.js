@@ -8,13 +8,14 @@ function Profile() {
 
     const {postLists} = useContext(PostContext);
     const {currentUser} = useContext(AuthContext);
-
+    localStorage.setItem("userName",currentUser.displayName)
+    console.log(localStorage.getItem("userName"))
     return (
 
         <div className="container">
           <div className="row gutters-sm" >
             <div className="mb-3">
-                <ProfileCard/>
+                <ProfileCard user={currentUser}/>
             </div>
               <div className="mb-3">
                   <h1 className="text-center text-success">{currentUser.displayName}'s Blogs</h1>

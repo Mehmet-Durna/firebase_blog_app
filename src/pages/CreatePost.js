@@ -10,25 +10,33 @@ function CreatePost() {
 
 
     const {postsCollectionRef, post, setPost} = useContext(PostContext);
-
     let navigate = useNavigate();
-
     const {postImage, title, postText} = post;
 
-    const handleSubmit = async () => {
 
+
+    const handleSubmit = async () => {
         navigate("/");
+
         await addDoc(postsCollectionRef, {
             postImage,
             title,
             postText,
-            author: {name: auth.currentUser.displayName, id: auth.currentUser.uid},
+            author: {displayName: auth.currentUser.displayName, uid: auth.currentUser.uid,email:auth.currentUser.email,photoURL:auth.currentUser.photoURL},
         });
+
+
+
     }
+
+
 
     const handleChange = (e) => {
         setPost({...post, [e.target.name]: e.target.value})
     }
+
+
+
 
 
     return (
