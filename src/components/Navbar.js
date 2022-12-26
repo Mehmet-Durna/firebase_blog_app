@@ -2,14 +2,13 @@ import React, {useContext} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {logOut} from "../auth/firebase";
 import {AuthContext} from "../context/AuthContext";
-import { CgProfile } from "react-icons/cg";
 
 
 
 function Navbar() {
     const navigate = useNavigate();
     const {currentUser} = useContext(AuthContext);
-const photo="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png";
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg ">
@@ -24,7 +23,7 @@ const photo="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-com
 
                                     <div className="dropdown text-center">
 
-                                        <img src={currentUser.photoURL? currentUser.photoURL:photo} alt="Profile Image" className="rounded-circle dropdown-toggle btn navbar-image " id="dropdownMenuButton"
+                                        <img src={currentUser.photoURL? currentUser.photoURL:""} alt="Profile Image" className="rounded-circle dropdown-toggle btn navbar-image " id="dropdownMenuButton"
                                              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                              referrerPolicy="no-referrer"/>
 
