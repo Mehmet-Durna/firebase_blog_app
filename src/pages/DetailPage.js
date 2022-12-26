@@ -1,5 +1,5 @@
-import React, {useContext, useState} from 'react';
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import React, {useContext} from 'react';
+import {useLocation, useNavigate} from "react-router-dom";
 import {PostContext} from "../context/PostContext";
 import {AuthContext} from "../context/AuthContext";
 
@@ -42,7 +42,7 @@ function deleteHandler(id){
 
                 </div>
                 <div className="col  align-self-center">
-                    <img className="detail-image " src={post?.postImage} alt="Card image cap"/>
+                    <img className="detail-image " src={post?.postImage} alt="Card"/>
                 </div>
             </div>
             <div className="text-center  my-3">

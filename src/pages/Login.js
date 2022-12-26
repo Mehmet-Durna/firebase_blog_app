@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {signIn, signUpProvider} from "../auth/firebase";
+import {signIn} from "../auth/firebase";
 import {useNavigate} from "react-router-dom";
 import AuthForm from "../components/AuthForm";
 

@@ -1,5 +1,5 @@
 import {createContext, useEffect, useState} from "react";
-import {collection, deleteDoc, doc, getDocs} from "firebase/firestore";
+import {collection, deleteDoc, doc,onSnapshot} from "firebase/firestore";
 import {db} from "../auth/firebase";
 
 
@@ -15,23 +15,23 @@ function PostContextProvider({children}) {
 
     const [post, setPost] = useState({
         postText:" ",
-        postImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG86RDiPaezKizmzQXeh315GAh8Cs4y4X5mKCeG93dzFhzQDaSHercGGEBmo6SrpbrkNI&usqp=CAU ",
+        postImage:"",
         postTitle:" "
     });
     const [postLists, setPostList] = useState([]);
     const postsCollectionRef = collection(db, "posts");
 
 
-
-
-    const getPosts = async () => {
-        const data = await getDocs(postsCollectionRef);
-        setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-
+    // By this hook we are getting collection of posts from data.
     useEffect(() => {
-        getPosts()
-    }, [postLists]);
+        onSnapshot(postsCollectionRef,(snapshot)=>{
+            setPostList(snapshot.docs.map((doc)=>({...doc.data(), id:doc.id})))
+            console.log("postLists")
+        })
+    }, []);
+
+
+
 
 
     const deletePost = async (id) => {
@@ -43,7 +43,7 @@ function PostContextProvider({children}) {
 
 
     function getOnePost(id){
-        const result = postLists?.filter((post)=> post.id==id)[0];
+        const result = postLists?.filter((post)=> post.id===id)[0];
         return result;
     };
 
@@ -51,7 +51,7 @@ function PostContextProvider({children}) {
 
 
     return (
-        <PostContext.Provider value={{postLists,setPostList,deletePost,getOnePost,postsCollectionRef,getPosts,post,setPost}}>
+        <PostContext.Provider value={{postLists,setPostList,deletePost,getOnePost,postsCollectionRef,post,setPost}}>
             {children}
         </PostContext.Provider>
     );
