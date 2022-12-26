@@ -28,9 +28,9 @@ function Navbar() {
                                              referrerPolicy="no-referrer"/>
 
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a className="dropdown-item " href="#" onClick={()=> navigate("/profile")}>Profile</a>
-                                            <a className="dropdown-item"  href="#" onClick={()=> navigate("/create-post")}>Create Post</a>
-                                            <a className="dropdown-item " href="#" onClick={()=> logOut()}>Logout</a>
+                                            <a className="dropdown-item "  onClick={()=> navigate("/profile")}>Profile</a>
+                                            <a className="dropdown-item"   onClick={()=> navigate("/create-post")}>Create Post</a>
+                                            <a className="dropdown-item "  onClick={()=> logOut()}>Logout</a>
 
                                         </div>
                                     </div>
