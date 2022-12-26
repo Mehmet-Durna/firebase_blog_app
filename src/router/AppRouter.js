@@ -42,7 +42,7 @@ function AppRouter() {
             <Navbar/>
             <Routes>
                 <Route path="/" element={<Main/>}/>
-
+                <Route path="/firebase_blog_app" element={<Main/>}/>
 
                 <Route element={<LoggedOutRouter/>}>
                     <Route path="/register" element={<Register/>}/>
