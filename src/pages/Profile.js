@@ -8,6 +8,7 @@ function Profile() {
 
     const {postLists} = useContext(PostContext);
     const {currentUser} = useContext(AuthContext);
+    console.log(currentUser.uid)
 
     return (
 
@@ -19,7 +20,7 @@ function Profile() {
               <div className="mb-3">
                   <h1 className="text-center text-success">{currentUser.displayName}'s Blogs</h1>
                   <Posts posts={postLists?.filter((post)=>
-                      post.author.id === currentUser.uid
+                      post.author.uid === currentUser.uid
                   )}/>
               </div>
 
