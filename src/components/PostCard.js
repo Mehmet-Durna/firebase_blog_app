@@ -1,5 +1,5 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {Button, Card} from "react-bootstrap";
 
 
@@ -7,6 +7,9 @@ import {Button, Card} from "react-bootstrap";
 function PostCard({post}) {
 
     const navigate = useNavigate();
+    const params = useParams();
+    console.log(params.authorName)
+    console.log(post.author.displayName)
 
 
 
@@ -32,8 +35,10 @@ function PostCard({post}) {
             </Card.Body>
 
             <Card.Footer>
-                <Button variant="outline-primary" onClick={()=> navigate(`author-profile/${post.author.displayName}`,{state:{user:post.author}})}>{post.author.displayName}</Button>
-            </Card.Footer>
+                {params.authorName!==post.author.displayName? <Button variant="outline-primary"
+                         onClick={() => navigate(`author-profile/${post.author.displayName}`, {state: {user: post.author}})}>{post.author.displayName}
+                </Button>: <small>{post.author.displayName}</small>
+                } </Card.Footer>
         </Card>
     );
 }
