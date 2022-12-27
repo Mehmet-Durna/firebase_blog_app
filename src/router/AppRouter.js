@@ -1,4 +1,4 @@
-import {BrowserRouter, Navigate, Outlet, Route, Routes, useLocation} from "react-router-dom";
+import {HashRouter , Navigate, Outlet, Route, Routes, useLocation} from "react-router-dom";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Main from "../pages/Main";
@@ -38,12 +38,12 @@ function AppRouter() {
     }
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Navbar/>
             <Routes>
-                <Route path="/mehmet-durna.github.io" element={<Main/>}/>
+
                 <Route path="/" element={<Main/>}/>
-                <Route path="/firebase_blog_app" element={<Main/>}/>
+
 
                 <Route element={<LoggedOutRouter/>}>
                     <Route path="/register" element={<Register/>}/>
@@ -61,7 +61,7 @@ function AppRouter() {
                 </Route>
             </Routes>
 
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
