@@ -6,10 +6,14 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import AppRouter from "./router/AppRouter";
 import AuthContextProvider from "./context/AuthContext";
 import PostContextProvider from "./context/PostContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 function App() {
+
+
 
   return (
       <div>

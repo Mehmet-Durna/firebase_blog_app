@@ -1,8 +1,8 @@
 import Posts from "../components/Posts";
 import {useContext, useState} from "react";
 import {PostContext} from "../context/PostContext";
-import {Button} from "react-bootstrap";
 import SearchBar from "../components/SearchBar";
+
 
 
 function Main() {
@@ -23,6 +23,7 @@ function Main() {
     return (
         <div className="container d-flex flex-column">
            <SearchBar search={search} setSearch={setSearch} filterType={filterType} setFilterType={setFilterType}/>
+
 
 
             <h1 className="text-center text-danger">Share Your Ideas</h1>

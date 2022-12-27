@@ -8,9 +8,6 @@ function PostCard({post}) {
 
     const navigate = useNavigate();
     const params = useParams();
-    console.log(params.authorName)
-    console.log(post.author.displayName)
-
 
 
     function cardHandler(post) {

@@ -39,7 +39,7 @@ function AuthForm({handleChange, handleSubmit,info}) {
                         <label htmlFor="password" className="form-label">
                             Password
                         </label>
-                        <input name="password" onChange={handleChange} type="text" className="form-control" placeholder="Enter your password.."/>
+                        <input name="password" onChange={handleChange} type="password" className="form-control" placeholder="Enter your password.."/>
                     </div>
                 {!info.firstName&& <div className="mb-3"><a className="text-decoration-none" href="#">Forget Password</a></div>}
                     <button type="submit" className="btn btn-primary form-control "> {info.firstName ? "Register" : "Login"} </button>
