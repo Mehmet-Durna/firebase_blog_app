@@ -41,6 +41,7 @@ function AppRouter() {
         <BrowserRouter>
             <Navbar/>
             <Routes>
+                <Route path="/mehmet-durna.github.io" element={<Main/>}/>
                 <Route path="/" element={<Main/>}/>
                 <Route path="/firebase_blog_app" element={<Main/>}/>
 
