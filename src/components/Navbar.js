@@ -1,13 +1,12 @@
 import React, {useContext} from 'react';
 import {Link, useNavigate} from "react-router-dom";
-import {logOut} from "../auth/firebase";
 import {AuthContext} from "../context/AuthContext";
 
 
 
 function Navbar() {
     const navigate = useNavigate();
-    const {currentUser} = useContext(AuthContext);
+    const {currentUser,logOut} = useContext(AuthContext);
 
     return (
         <div>
@@ -20,7 +19,6 @@ function Navbar() {
 
                         {currentUser ? (
                                 <>
-
                                     <div className="dropdown text-center">
 
                                         <img src={currentUser.photoURL? currentUser.photoURL:""} alt="Profile Image" className="rounded-circle dropdown-toggle btn navbar-image " id="dropdownMenuButton"

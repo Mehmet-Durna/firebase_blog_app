@@ -4,7 +4,7 @@ import {Button, Form} from "react-bootstrap";
 function PostForm({handleChange, handleSubmit,post}) {
     return (
         <div className="container">
-            <h1 className="text-center text-warning">Create A Post</h1>
+            <h1 className="text-center text-warning">{post? "Edit Post":"Create a Post"}</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label > Image:</Form.Label>

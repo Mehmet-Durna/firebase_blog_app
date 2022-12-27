@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button} from "react-bootstrap";
+import {Button, CloseButton} from "react-bootstrap";
 
 function SearchBar({filterType,setFilterType,search, setSearch}) {
 
@@ -17,10 +17,12 @@ function SearchBar({filterType,setFilterType,search, setSearch}) {
                 <div className="mb-3 d-grid">
                     <div className="d-flex justify-content-between align-items-stretch">
                         <label className="form-label"> Search By: {filterType}</label>
-                        <p className="btn p-0 text-danger " onClick={(e) => {
+
+                        <CloseButton  onClick={(e) => {
                             e.preventDefault()
                             setDisplaySearch(false)
-                        }}>X</p>
+                            setSearch("")
+                        }}/>
                     </div>
 
                     <div>

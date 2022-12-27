@@ -1,12 +1,13 @@
-import {signUpProvider} from "../auth/firebase";
-import React from "react";
+
+import React, {useContext} from "react";
 import {useNavigate} from "react-router-dom";
+import {AuthContext} from "../context/AuthContext";
 
 
 function AuthForm({handleChange, handleSubmit,info}) {
 
-    const navigate=useNavigate();
 
+    const {signUpProvider} = useContext(AuthContext);
 
     return (
         <div className="container d-grid justify-content-center ">
@@ -44,7 +45,7 @@ function AuthForm({handleChange, handleSubmit,info}) {
                 {!info.firstName&& <div className="mb-3"><a className="text-decoration-none" href="#">Forget Password</a></div>}
                     <button type="submit" className="btn btn-primary form-control "> {info.firstName ? "Register" : "Login"} </button>
             </form>
-            {!info.firstName && <button onClick={() => signUpProvider(navigate)} className={"btn btn-primary form-control  mt-2 "}>Continue
+            {!info.firstName && <button onClick={() => signUpProvider()} className={"btn btn-primary form-control  mt-2 "}>Continue
                 with Google </button>}
         </div>
     );

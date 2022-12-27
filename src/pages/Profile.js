@@ -8,8 +8,7 @@ function Profile() {
 
     const {postLists} = useContext(PostContext);
     const {currentUser} = useContext(AuthContext);
-    localStorage.setItem("userName",currentUser.displayName)
-    console.log(localStorage.getItem("userName"))
+
     return (
 
         <div className="container">

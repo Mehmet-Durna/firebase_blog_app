@@ -3,6 +3,7 @@ import {useNavigate, useLocation} from "react-router-dom";
 import {doc, updateDoc} from "firebase/firestore";
 import {db} from "../auth/firebase";
 import PostForm from "../components/PostForm";
+import {toast} from "react-toastify";
 
 
 function EditPost() {
@@ -22,6 +23,10 @@ const {postImage,title,postText}=updatedPost
             postImage: postImage,
             title: title,
             postText: postText,
+        });
+
+        toast.info('Post is updated !', {
+            position: toast.POSITION.TOP_RIGHT
         });
 
     }

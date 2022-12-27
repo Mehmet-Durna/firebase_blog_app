@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import {signIn} from "../auth/firebase";
+import React, {useContext, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import AuthForm from "../components/AuthForm";
-import {toast, ToastContainer} from "react-toastify";
+
+import {AuthContext} from "../context/AuthContext";
 
 function Login() {
 
 
-
+    const {signIn} = useContext(AuthContext);
     const [info,setInfo]=useState({
         email:" ",
         password:" ",

@@ -1,6 +1,7 @@
 import {createContext, useEffect, useState} from "react";
 import {collection, deleteDoc, doc,onSnapshot} from "firebase/firestore";
 import {db} from "../auth/firebase";
+import {toast} from "react-toastify";
 
 
 
@@ -26,7 +27,6 @@ function PostContextProvider({children}) {
     useEffect(() => {
         onSnapshot(postsCollectionRef,(snapshot)=>{
             setPostList(snapshot.docs.map((doc)=>({...doc.data(), id:doc.id})))
-            console.log("postLists")
         })
     }, []);
 
@@ -37,7 +37,9 @@ function PostContextProvider({children}) {
     const deletePost = async (id) => {
         const postDoc = doc(db, "posts", id);
         await deleteDoc(postDoc);
-
+        toast.warning('Post is deleted !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
     };
 
 

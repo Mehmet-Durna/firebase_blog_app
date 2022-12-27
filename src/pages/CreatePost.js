@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {useContext} from "react";
 import {PostContext} from "../context/PostContext";
 import PostForm from "../components/PostForm";
+import {toast} from "react-toastify";
 
 
 function CreatePost() {
@@ -24,9 +25,9 @@ function CreatePost() {
             postText,
             author: {displayName: auth.currentUser.displayName, uid: auth.currentUser.uid,email:auth.currentUser.email,photoURL:auth.currentUser.photoURL},
         });
-
-
-
+        toast.info('Post is created !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
     }
 
 

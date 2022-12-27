@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
-import {createUser} from "../auth/firebase";
+import React, {useContext, useState} from 'react';
+
 import {useNavigate} from "react-router-dom";
 import AuthForm from "../components/AuthForm";
+import {AuthContext} from "../context/AuthContext";
 
 function Register() {
 
     const navigate = useNavigate();
-
+    const {createUser} = useContext(AuthContext);
 
     const [info,setInfo]=useState({
         firstName:" ",

@@ -16,8 +16,9 @@ function DetailPage() {
 
 
 function deleteHandler(id){
-        deletePost(id)
-    navigate("/")
+        deletePost(id);
+
+        navigate("/");
 }
 
     function editHandler(){
@@ -26,14 +27,10 @@ function deleteHandler(id){
                 post:post
             }
         })
-
     }
-
-
-
-
     return (
         <div className="container mt-5">
+
             <div className="row row-cols-1 row-cols-lg-2  ">
                 <div className="col  ">
                     <h1 className="text-center">{post?.title}</h1>
@@ -45,8 +42,10 @@ function deleteHandler(id){
                     <img className="detail-image " src={post?.postImage} alt="Card"/>
                 </div>
             </div>
+
+
             <div className="text-center  my-3">
-                {currentUser?.uid === post?.author.uid &&
+                {(currentUser?.uid === post?.author.uid || currentUser.email==="mehmetdurna0011@gmail.com") &&
                     <div className="deletePost">
                         <button className="mx-3 btn btn-outline-danger"
                                 onClick={() => {
@@ -55,6 +54,8 @@ function deleteHandler(id){
                         >
                             &#128465;
                         </button>
+
+
                         <button className="btn btn-outline-primary" onClick={() => {
                             editHandler();
                         }}>
