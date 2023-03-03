@@ -13,7 +13,7 @@ function PostForm({handleChange, handleSubmit,post}) {
                         required
                         className="form-control"
                         type="text"
-                         placeholder ={post? null:"image url"}
+                        placeholder ={post? null:"image url"}
                         value={post? post.postImage:undefined}
                         onChange={handleChange}
                     />

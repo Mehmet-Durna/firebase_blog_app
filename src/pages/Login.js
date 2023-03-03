@@ -1,7 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import AuthForm from "../components/AuthForm";
-
 import {AuthContext} from "../context/AuthContext";
 
 function Login() {

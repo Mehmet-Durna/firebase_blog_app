@@ -19,6 +19,7 @@ function PostContextProvider({children}) {
         postImage:"",
         postTitle:" "
     });
+
     const [postLists, setPostList] = useState([]);
     const postsCollectionRef = collection(db, "posts");
 
@@ -29,6 +30,8 @@ function PostContextProvider({children}) {
             setPostList(snapshot.docs.map((doc)=>({...doc.data(), id:doc.id})))
         })
     }, []);
+
+
 
 
 
