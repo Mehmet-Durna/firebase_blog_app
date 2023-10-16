@@ -11,6 +11,7 @@ This is a React Firebase blog app for managing and sharing your blog posts. You 
 ## Technologies Used
 - **React**: The core framework for building the app.
 - **Firebase (Authentication, Firestore, Storage)**: Utilized for user authentication and data storage.
+- **Notifications**: Utilize `react-toastify` for user-friendly notifications.
 - **Other Libraries and Dependencies**: Check `package.json` for a list of dependencies.
 
 ## Getting Started
@@ -33,10 +34,6 @@ Once configured, you can create and manage blog posts, comment on posts, and int
 To deploy your app:
 
 1. Build the production-ready code with `npm run build`.
-2. Deploy the build to your hosting platform, such as Firebase Hosting or GitHub Pages.
-
-## Contributing
-If you'd like to contribute to this project, please follow our [contributing guidelines](CONTRIBUTING.md).
-
-## License
-This project is licensed under the [MIT License](LICENSE).
+2. Deploy the build to your hosting platform, such as Netlify or GitHub Pages.
+   
+   https://react-firebase-mehmet-blogapp.netlify.app/
