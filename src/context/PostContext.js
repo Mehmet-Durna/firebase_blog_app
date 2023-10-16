@@ -29,7 +29,7 @@ function PostContextProvider({children}) {
         onSnapshot(postsCollectionRef,(snapshot)=>{
             setPostList(snapshot.docs.map((doc)=>({...doc.data(), id:doc.id})))
         })
-    }, []);
+    }, );
 
 
 

@@ -21,14 +21,26 @@ function Navbar() {
                                 <>
                                     <div className="dropdown text-center">
 
-                                        <img src={currentUser.photoURL? currentUser.photoURL:""} alt="Profile-Image" className="rounded-circle dropdown-toggle btn navbar-image " id="dropdownMenuButton"
-                                             data-bs-toggle="dropdown"   aria-expanded="false"
-                                             referrerPolicy="no-referrer"/>
+                                        <img
+                                            src={currentUser.photoURL ? currentUser.photoURL : ''}
+                                            alt="User Profile"
+                                            className="rounded-circle dropdown-toggle btn navbar-image"
+                                            id="dropdownMenuButton"
+                                            data-bs-toggle="dropdown"
+                                            referrerPolicy="no-referrer"
+                                        />
+
 
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a className="dropdown-item "  onClick={()=> navigate("/profile")}>Profile</a>
-                                            <a className="dropdown-item"   onClick={()=> navigate("/create-post")}>Create Post</a>
-                                            <a className="dropdown-item "  onClick={()=> logOut()}>Logout</a>
+                                            <button
+                                                className="dropdown-item"
+                                                onClick={() => navigate("/profile")}
+                                                style={{ border: 'none', background: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                                            >
+                                                Profile
+                                            </button>
+                                            <button className="dropdown-item" onClick={() => navigate("/create-post")}>Create Post</button>
+                                            <button className="dropdown-item" onClick={() => logOut()}>Logout</button>
 
                                         </div>
                                     </div>
