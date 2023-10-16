@@ -1,5 +1,6 @@
 # Firebase Blog App
-
+   https://react-firebase-mehmet-blogapp.netlify.app/
+   
 This is a React Firebase blog app for managing and sharing your blog posts. You can create and edit posts, engage with readers through comments, and more.
 
 ## Features
@@ -35,5 +36,3 @@ To deploy your app:
 
 1. Build the production-ready code with `npm run build`.
 2. Deploy the build to your hosting platform, such as Netlify or GitHub Pages.
-   
-   https://react-firebase-mehmet-blogapp.netlify.app/
