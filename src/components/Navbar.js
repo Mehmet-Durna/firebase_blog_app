@@ -21,8 +21,8 @@ function Navbar() {
                                 <>
                                     <div className="dropdown text-center">
 
-                                        <img src={currentUser.photoURL? currentUser.photoURL:""} alt="Profile Image" className="rounded-circle dropdown-toggle btn navbar-image " id="dropdownMenuButton"
-                                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        <img src={currentUser.photoURL? currentUser.photoURL:""} alt="Profile-Image" className="rounded-circle dropdown-toggle btn navbar-image " id="dropdownMenuButton"
+                                             data-bs-toggle="dropdown"   aria-expanded="false"
                                              referrerPolicy="no-referrer"/>
 
                                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">

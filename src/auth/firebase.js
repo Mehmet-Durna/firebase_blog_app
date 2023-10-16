@@ -1,6 +1,6 @@
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "firebase/firestore";
-import {getAuth,signInWithPopup,updateProfile, createUserWithEmailAndPassword, signInWithEmailAndPassword,signOut,onAuthStateChanged,GoogleAuthProvider } from "firebase/auth";
+import {getAuth} from "firebase/auth";
 
 
 
